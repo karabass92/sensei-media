@@ -1,0 +1,46 @@
+---
+import { type SeoHeadProps } from './types';
+
+const {
+  title,
+  description,
+  url = Astro.url.href,
+  image = 'https://www.example.com/_astro/seo-banner.BZD7kegZ.webp',
+  imageAlt = 'Preview of the site',
+  type = 'website',
+  robots = 'index, follow',
+  themeColor = '#ffffff'
+} = Astro.props as SeoHeadProps;
+---
+
+<head>
+    <!-- General -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content={robots} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={url} />
+    <title>{title}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={url} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={imageAlt} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    <!-- PWA & Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="sitemap" href="../../../public/sitemap.xml" />
+    <link rel="manifest" href="../../../public/site.webmanifest" />
+    <link rel="icon" href="../../../public/favicon.svg" />
+    <meta name="theme-color" content={themeColor} />
+</head>
