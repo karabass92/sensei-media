@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <section class="py-16 mx-auto xl:container flex justify-around items-center">
+    <section class="hidden py-16 mx-auto xl:container md:flex justify-around items-center">
       <article class="flex flex-col gap-3">
         <img :src="logoPath" alt="SM | sensei media" class="h-[70px]">
         <p class="flex flex-col underline leading-5">
@@ -11,17 +11,19 @@
       <article
         v-for="group in linkGroups"
         :key="group.title"
-        class="flex flex-col gap-3"
+        class="hidden md:flex flex-col gap-3"
       >
         <h4 class="font-semibold uppercase">{{ group.title }}</h4>
         <ul>
           <li v-for="link in group.links" :key="link.label">
-            <a :href="link.ref" class="leading-9">{{ link.label }}</a>
+            <a :href="link.ref" class="leading-9 hover:underline">
+              {{ link.label }}
+            </a>
           </li>
         </ul>
       </article>
     </section>
-    <section class="text-sm text-white-50 bg-gray-50 leading-9 text-center">
+    <section class="text-xs md:text-sm text-white-50 bg-gray-50 leading-6 md:leading-9 text-center">
       © 2021 Все права защиены
     </section>
   </footer>
