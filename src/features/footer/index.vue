@@ -1,12 +1,12 @@
 <template>
-  <footer>
+  <footer id="footer">
     <section class="hidden py-16 mx-auto xl:container md:flex justify-around items-center">
       <article class="flex flex-col gap-3">
-        <img :src="logoPath" alt="SM | sensei media" class="h-[70px]">
-        <p class="flex flex-col underline leading-5">
+        <img :src="logoPath" alt="SM | sensei media" class="h-[70px]" />
+        <a href="" class="flex flex-col underline leading-5">
           <span>Политика</span>
           <span>конфиденциальности</span>
-        </p>
+        </a>
       </article>
       <article
         v-for="group in linkGroups"
