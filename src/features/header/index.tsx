@@ -2,7 +2,7 @@ import { type FC } from 'react';
 
 const Header: FC = () => {
   return (
-    <header>
+    <header className="text-2xl text-tahiti">
       HEADER
     </header>
   );
