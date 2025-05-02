@@ -10,7 +10,6 @@ const links = [
 ];
 
 const Header: FC = () => {
-
   return (
     <header className="sticky top-0 bg-white-50 shadow-3xl">
       <div className="p-2 mx-auto xl:container flex items-center justify-between">
